@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prom?</title>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  margin-top:100px;
+}
+
+button{
+  font-size:20px;
+  padding:10px 20px;
+  margin:20px;
+}
+
+#noBtn{
+  position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Will you go to prom with me? 💃</h1>
+
+<button onclick="yesClicked()">Yes</button>
+<button id="noBtn">No</button>
+
+<script>
+let attempts = 0;
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function(){
+    attempts++;
+
+    let x = Math.random() * window.innerWidth * 0.7;
+    let y = Math.random() * window.innerHeight * 0.7;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    if(attempts > 5){
+        document.body.innerHTML = "<h1>Okay okay... just press yes already 😂</h1>";
+    }
+});
+
+function yesClicked(){
+    document.body.innerHTML = "<h1>Yay! Prom date confirmed 🎉</h1>";
+}
+</script>
+
+</body>
+</html>
